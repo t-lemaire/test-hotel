@@ -26,11 +26,11 @@ class StoreRoom extends FormRequest
     public function rules(): array
     {
         return [
-            'floor' => ['required', 'boolean'],
-            'room_number' => ['required', 'boolean'],
+            'floor' => ['required', 'integer'],
+            'room_number' => ['required', 'integer'],
             'description' => ['nullable', 'string'],
             'out_of_order' => ['required', 'boolean'],
-            
+
         ];
     }
 }

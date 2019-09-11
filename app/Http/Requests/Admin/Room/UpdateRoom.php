@@ -26,11 +26,11 @@ class UpdateRoom extends FormRequest
     public function rules(): array
     {
         return [
-            'floor' => ['sometimes', 'boolean'],
-            'room_number' => ['sometimes', 'boolean'],
+            'floor' => ['sometimes', 'integer'],
+            'room_number' => ['sometimes', 'integer'],
             'description' => ['nullable', 'string'],
             'out_of_order' => ['sometimes', 'boolean'],
-            
+
         ];
     }
 

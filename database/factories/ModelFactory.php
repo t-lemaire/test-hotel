@@ -61,3 +61,16 @@ $factory->define(App\Models\Room::class, static function (Faker\Generator $faker
         
     ];
 });
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Room::class, static function (Faker\Generator $faker) {
+    return [
+        'floor' => $faker->randomNumber(5),
+        'room_number' => $faker->randomNumber(5),
+        'description' => $faker->sentence,
+        'out_of_order' => $faker->boolean(),
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        
+        
+    ];
+});

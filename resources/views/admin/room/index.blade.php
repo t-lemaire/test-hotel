@@ -29,7 +29,7 @@
                                 </div>
                                 <div class="col-sm-auto form-group ">
                                     <select class="form-control" v-model="pagination.state.per_page">
-                                        
+
                                         <option value="10">10</option>
                                         <option value="25">25</option>
                                         <option value="100">100</option>
@@ -80,8 +80,8 @@
                                     <td>@{{ item.floor }}</td>
                                     <td>@{{ item.room_number }}</td>
                                     <td>@{{ item.description }}</td>
-                                    <td>@{{ item.out_of_order }}</td>
-                                    
+                                    <td>@{{ item.out_of_order == 1 ? 'Yes' : 'No' }}</td>
+
                                     <td>
                                         <div class="row no-gutters">
                                             <div class="col-auto">
