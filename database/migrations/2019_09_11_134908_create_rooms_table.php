@@ -15,8 +15,8 @@ class CreateRoomsTable extends Migration
     {
         Schema::create('rooms', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedTinyInteger('floor');
-            $table->unsignedTinyInteger('room_number');
+            $table->unsignedInteger('floor');
+            $table->unsignedInteger('room_number');
             $table->string('description', 200)->nullable();
             $table->boolean('out_of_order')->default(false)->nullable(false);
             $table->timestamps();

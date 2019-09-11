@@ -72,3 +72,14 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
     Route::get('/admin/password',                               'Admin\ProfileController@editPassword');
     Route::post('/admin/password',                              'Admin\ProfileController@updatePassword');
 });
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::get('/admin/rooms',                                  'Admin\RoomsController@index');
+    Route::get('/admin/rooms/create',                           'Admin\RoomsController@create');
+    Route::post('/admin/rooms',                                 'Admin\RoomsController@store');
+    Route::get('/admin/rooms/{room}/edit',                      'Admin\RoomsController@edit')->name('admin/rooms/edit');
+    Route::post('/admin/rooms/bulk-destroy',                    'Admin\RoomsController@bulkDestroy')->name('admin/rooms/bulk-destroy');
+    Route::post('/admin/rooms/{room}',                          'Admin\RoomsController@update')->name('admin/rooms/update');
+    Route::delete('/admin/rooms/{room}',                        'Admin\RoomsController@destroy')->name('admin/rooms/destroy');
+});

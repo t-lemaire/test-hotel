@@ -48,4 +48,16 @@ $factory->define(Brackets\AdminAuth\Models\AdminUser::class, function (Faker\Gen
         'updated_at' => $faker->dateTime,
         
     ];
+});/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Room::class, static function (Faker\Generator $faker) {
+    return [
+        'floor' => $faker->boolean(),
+        'room_number' => $faker->boolean(),
+        'description' => $faker->sentence,
+        'out_of_order' => $faker->boolean(),
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        
+        
+    ];
 });

@@ -29,5 +29,24 @@ return [
         ],
     ],
 
+    'room' => [
+        'title' => 'Rooms',
+
+        'actions' => [
+            'index' => 'Rooms',
+            'create' => 'New Room',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'floor' => 'Floor',
+            'room_number' => 'Room number',
+            'description' => 'Description',
+            'out_of_order' => 'Out of order',
+            
+        ],
+    ],
+
     // Do not delete me :) I'm used for auto-generation
 ];
