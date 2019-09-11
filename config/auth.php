@@ -76,6 +76,11 @@ return [
             'model' => Brackets\AdminAuth\Models\AdminUser::class,
         ], 
         
+        'admin_users' => [
+            'driver' => 'eloquent',
+            'model' => Brackets\AdminAuth\Models\AdminUser::class,
+        ], 
+        
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
@@ -103,6 +108,12 @@ return [
     */
 
     'passwords' => [
+        'admin_users' => [
+            'provider' => 'admin_users',
+            'table' => 'admin_password_resets',
+            'expire' => 60,
+        ],
+        
         'admin_users' => [
             'provider' => 'admin_users',
             'table' => 'admin_password_resets',
