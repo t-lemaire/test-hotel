@@ -86,3 +86,15 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::get('/admin/users',                                  'Admin\UsersController@index');
+    Route::get('/admin/users/create',                           'Admin\UsersController@create');
+    Route::post('/admin/users',                                 'Admin\UsersController@store');
+    Route::get('/admin/users/{user}/edit',                      'Admin\UsersController@edit')->name('admin/users/edit');
+    Route::post('/admin/users/{user}',                          'Admin\UsersController@update')->name('admin/users/update');
+    Route::delete('/admin/users/{user}',                        'Admin\UsersController@destroy')->name('admin/users/destroy');
+    Route::get('/admin/users/{user}/resend-activation',         'Admin\UsersController@resendActivationEmail')->name('admin/users/resendActivationEmail');
+});
