@@ -83,3 +83,6 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
     Route::post('/admin/rooms/{room}',                          'Admin\RoomsController@update')->name('admin/rooms/update');
     Route::delete('/admin/rooms/{room}',                        'Admin\RoomsController@destroy')->name('admin/rooms/destroy');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
