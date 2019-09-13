@@ -111295,6 +111295,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _profile_edit_password__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./profile-edit-password */ "./resources/js/admin/profile-edit-password/index.js");
 /* harmony import */ var _room__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./room */ "./resources/js/admin/room/index.js");
 /* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./user */ "./resources/js/admin/user/index.js");
+/* harmony import */ var _reservation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./reservation */ "./resources/js/admin/reservation/index.js");
+
 
 
 
@@ -111410,6 +111412,66 @@ Vue.component('profile-edit-profile-form', {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Form */ "./resources/js/admin/profile-edit-profile/Form.js");
 
+
+
+
+/***/ }),
+
+/***/ "./resources/js/admin/reservation/Form.js":
+/*!************************************************!*\
+  !*** ./resources/js/admin/reservation/Form.js ***!
+  \************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app_components_Form_AppForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../app-components/Form/AppForm */ "./resources/js/admin/app-components/Form/AppForm.js");
+
+Vue.component('reservation-form', {
+  mixins: [_app_components_Form_AppForm__WEBPACK_IMPORTED_MODULE_0__["default"]],
+  data: function data() {
+    return {
+      form: {
+        user_id: '',
+        room_id: '',
+        from_date: '',
+        to_date: ''
+      }
+    };
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/admin/reservation/Listing.js":
+/*!***************************************************!*\
+  !*** ./resources/js/admin/reservation/Listing.js ***!
+  \***************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app_components_Listing_AppListing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../app-components/Listing/AppListing */ "./resources/js/admin/app-components/Listing/AppListing.js");
+
+Vue.component('reservation-listing', {
+  mixins: [_app_components_Listing_AppListing__WEBPACK_IMPORTED_MODULE_0__["default"]]
+});
+
+/***/ }),
+
+/***/ "./resources/js/admin/reservation/index.js":
+/*!*************************************************!*\
+  !*** ./resources/js/admin/reservation/index.js ***!
+  \*************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Listing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Listing */ "./resources/js/admin/reservation/Listing.js");
+/* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Form */ "./resources/js/admin/reservation/Form.js");
 
 
 

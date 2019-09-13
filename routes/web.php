@@ -98,3 +98,14 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
     Route::delete('/admin/users/{user}',                        'Admin\UsersController@destroy')->name('admin/users/destroy');
     Route::get('/admin/users/{user}/resend-activation',         'Admin\UsersController@resendActivationEmail')->name('admin/users/resendActivationEmail');
 });
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::get('/admin/reservations',                           'Admin\ReservationsController@index');
+    Route::get('/admin/reservations/create',                    'Admin\ReservationsController@create');
+    Route::post('/admin/reservations',                          'Admin\ReservationsController@store');
+    Route::get('/admin/reservations/{reservation}/edit',        'Admin\ReservationsController@edit')->name('admin/reservations/edit');
+    Route::post('/admin/reservations/bulk-destroy',             'Admin\ReservationsController@bulkDestroy')->name('admin/reservations/bulk-destroy');
+    Route::post('/admin/reservations/{reservation}',            'Admin\ReservationsController@update')->name('admin/reservations/update');
+    Route::delete('/admin/reservations/{reservation}',          'Admin\ReservationsController@destroy')->name('admin/reservations/destroy');
+});

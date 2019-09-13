@@ -9,3 +9,4 @@ import './profile-edit-profile';
 import './profile-edit-password';
 import './room';
 import './user';
+import './reservation';

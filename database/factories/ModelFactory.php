@@ -88,3 +88,16 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Reservation::class, static function (Faker\Generator $faker) {
+    return [
+        'user_id' => $faker->sentence,
+        'room_id' => $faker->sentence,
+        'from_date' => $faker->date(),
+        'to_date' => $faker->date(),
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        
+        
+    ];
+});
