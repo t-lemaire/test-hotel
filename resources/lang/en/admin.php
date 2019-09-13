@@ -59,8 +59,8 @@ return [
 
         'columns' => [
             'id' => 'ID',
-            'user_id' => 'User ID',
-            'room_id' => 'Room ID',
+            'user_id' => 'User',
+            'room_id' => 'Room',
             'from_date' => 'From Date',
             'to_date' => 'To Date',
 
