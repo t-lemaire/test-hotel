@@ -48,6 +48,25 @@ return [
         ],
     ],
 
+    'reservation' => [
+        'title' => 'Reservations',
+
+        'actions' => [
+            'index' => 'Reservation',
+            'create' => 'New Reservation',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'user_id' => 'User ID',
+            'room_id' => 'Room ID',
+            'from_date' => 'From Date',
+            'to_date' => 'To Date',
+
+        ],
+    ],
+
     'user' => [
         'title' => 'Users',
 
