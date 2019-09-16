@@ -77,7 +77,11 @@
                                     </td>
 
                                     <td>@{{ item.id }}</td>
-                                    <td>@{{ item.user.name }}</td>
+                                    <td>
+                                        <a :href="'{{ route('admin/users/edit', ['user' => '1234567989']) }}'.replace('1234567989', item.user.id)">
+                                            @{{ item.user.name }}
+                                        </a>
+                                    </td>
                                     <td>@{{ item.room.room_number }}</td>
                                     <td>@{{ item.from_date | date }}</td>
                                     <td>@{{ item.to_date | date }}</td>
