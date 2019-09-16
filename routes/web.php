@@ -15,7 +15,15 @@
 //    return view('welcome');
 //});
 
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', 'IndexController@index')->name('home');
+
+Route::middleware(['auth'])->group(static function ()
+    {
+        Route::get('user/reservations', 'ReservationController@list')->name('user/reservations');
+    }
+);
 
 /* Auto-generated admin routes */
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
