@@ -47,7 +47,7 @@
                                     <th is='sortable' :column="'name'">{{ trans('admin.user.columns.name') }}</th>
                                     <th is='sortable' :column="'email'">{{ trans('admin.user.columns.email') }}</th>
                                     <th is='sortable' :column="'email_verified_at'">{{ trans('admin.user.columns.email_verified_at') }}</th>
-                                    
+
                                     <th></th>
                                 </tr>
                             </thead>
@@ -57,16 +57,16 @@
                                     <td >@{{ item.name }}</td>
                                     <td >@{{ item.email }}</td>
                                     <td >@{{ item.email_verified_at | datetime }}</td>
-                                    
+
                                     <td>
                                         <div class="row no-gutters">
                                             <div class="col-auto">
-                                                <button class="btn btn-sm btn-warning" v-show="!item.activated" @click="resendActivation(item.resource_url + '/resend-activation')" title="Resend activation" role="button"><i class="fa fa-envelope-o"></i></button>
+                                                <button class="btn btn-sm btn-warning" v-show="!item.activated" @click="resendActivation('{{ route('admin/users/resendActivationEmail', ['user' => '1234567989']) }}'.replace('1234567989', item.id))" title="Resend activation" role="button"><i class="fa fa-envelope-o"></i></button>
                                             </div>
                                             <div class="col-auto">
-                                                <a class="btn btn-sm btn-spinner btn-info" :href="item.resource_url + '/edit'" title="{{ trans('brackets/admin-ui::admin.btn.edit') }}" role="button"><i class="fa fa-edit"></i></a>
+                                                <a class="btn btn-sm btn-spinner btn-info" :href="'{{ route('admin/users/edit', ['user' => '1234567989']) }}'.replace('1234567989', item.id)" title="{{ trans('brackets/admin-ui::admin.btn.edit') }}" role="button"><i class="fa fa-edit"></i></a>
                                             </div>
-                                            <form class="col" @submit.prevent="deleteItem(item.resource_url)">
+                                            <form class="col" @submit.prevent="deleteItem('{{ route('admin/users/update', ['user' => '1234567989']) }}'.replace('1234567989', item.id))">
                                                 <button type="submit" class="btn btn-sm btn-danger" title="{{ trans('brackets/admin-ui::admin.btn.delete') }}"><i class="fa fa-trash-o"></i></button>
                                             </form>
                                         </div>
