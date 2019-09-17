@@ -7,7 +7,12 @@
                 <img src="https://via.placeholder.com/250x600?text=Test+Hotel" alt="Test Hotel Picture" />
             </div>
             <div class="col-md-8">
-                <h5>Welcome to Test Hotel{{Auth::user()->name ? ' ' . Auth::user()->name : '' }}!</h5>
+                @auth
+                    <h5 class="display-4">Hello, {{Auth::user()->name }} and welcome to the Test Hotel!</h5>
+                @endauth
+                @guest
+                    <h5 class="display-4">Welcome to the Test Hotel!</h5>
+                @endguest
                 <p>Vestibulum pellentesque porttitor elit vel hendrerit. Vestibulum laoreet diam augue, vel convallis neque vestibulum in. Vivamus malesuada ante sed lobortis euismod. Nunc lorem eros, sagittis vitae finibus id, feugiat eget massa. Praesent vitae quam nunc. Nam lobortis, nunc at tristique varius, neque arcu ullamcorper dolor, et fringilla neque metus at ipsum. Vestibulum pellentesque in purus sit amet rutrum. Cras auctor vel augue ac dictum.</p>
                 <p>Nulla luctus lorem dolor, ut euismod nunc congue at. Quisque finibus ex eu sagittis dapibus. Mauris sagittis metus elementum ultrices pulvinar. Quisque rhoncus malesuada lobortis. Fusce turpis purus, bibendum et posuere nec, hendrerit ac eros. Phasellus aliquam massa ac nibh tincidunt lacinia. Donec eget magna venenatis, venenatis felis ac, semper ex. Nam tempus auctor dolor, pharetra tristique massa. Curabitur metus libero, ultricies eget fringilla sed, ullamcorper eget elit. Ut id semper mauris. Nullam pharetra non libero et fermentum. Aliquam ullamcorper molestie nibh et rhoncus.</p>
                 <p>Ut purus elit, vestibulum at vestibulum vitae, tempor quis lacus. Nulla vehicula purus et mauris viverra, eu posuere quam interdum. Nullam fringilla orci a lacus facilisis rhoncus. Aliquam egestas placerat dapibus. In vitae commodo diam. Vivamus sollicitudin, odio eget cursus accumsan, erat lacus molestie tellus, in dictum sem purus in ipsum. Suspendisse suscipit sagittis lacinia. Etiam finibus finibus est, eget sodales arcu commodo at.</p>

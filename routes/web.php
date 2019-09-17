@@ -21,7 +21,12 @@ Route::get('/', 'IndexController@index')->name('home');
 
 Route::middleware(['auth'])->group(static function ()
     {
-        Route::get('user/reservations', 'ReservationController@list')->name('user/reservations');
+        Route::get('user/{user}/reservations/{page?}', 'ReservationController@list')->name('user/reservations');
+        Route::get('user/{user}/reservations/create', 'ReservationController@list')->name('user/reservations/create');
+        Route::get('user/{user}/reservations/{reservation}', 'ReservationController@view')->name('user/reservations/view');
+        Route::post('user/{user}/reservations', 'ReservationController@store')->name('user/reservations/store');
+        Route::post('user/{user}/reservations/{reservation}', 'ReservationController@update')->name('user/reservations/update');
+        Route::delete('user/{user}/reservations/{reservation}', 'ReservationController@delete')->name('user/reservations/update');
     }
 );
 

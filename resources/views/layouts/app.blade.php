@@ -57,8 +57,11 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('user/reservations') }}">My reservations</a>
+                                <a class="dropdown-item" href="{{ route('user/reservations',['user' => Auth::user()]) }}">My reservations</a>
+                                <a class="dropdown-item" href="{{ route('user/reservations/create', ['user' => Auth::user()]) }}">Book a room</a>
+
                                 <div class="dropdown-divider"></div>
+
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
